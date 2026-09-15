@@ -80,5 +80,26 @@ object residuosRadioctivos {
     method peso(nuevoPeso){
         peso = nuevoPeso
     }
-    method peso(){}
+    method peso(){
+        return peso
+    }
+    method nivelDePeligrosidad(){
+         return 200
+    }
+}
+object embalajeDeSeguridad {
+    var envuelve = cosa
+    method envuelveOtraCosa(nuevaCosa){
+        envuelve = nuevaCosa
+    }
+    method envuelve(){
+        return envuelve
+    }
+    method peso(){
+        return self.envuelve().peso()
+    }
+    method nivelDePeligrosidad(){
+        return self.envuelve().nivelDePeligrosidad() / 2
+    }
+
 }
