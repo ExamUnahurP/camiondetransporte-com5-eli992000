@@ -57,16 +57,28 @@ object bateriaAntiaerea{
         if (estaConLosMisiles) 300 else 200
     }
     method nivelDePeligrosidad(){
+        return
         if (estaConLosMisiles) 100 else 0
     }
-
 }
 object contenedorPortuario{
     var cosas = []
-    method agregarCosas(unaCosa){
-        cosas.add(unaCosa)
+    const contenedor = []
+    method pesoDeCadaCosa(){
+        return contenedor.sum({cosa => cosa.peso()})
     }
     method peso(){
-        cosas.peso().sum() + 100
+        return 100 + self.pesoDeCadaCosa()
     }
+    method nivelDePeligrosidad(){
+        return 
+        if(contenedor.isEmpty()) 0 else contenedor.max({ cosa => cosa.nivelDePeligrosidad()}).nivelDePeligrosidad()
+    }
+}
+object residuosRadioctivos {
+    var peso = 0
+    method peso(nuevoPeso){
+        peso = nuevoPeso
+    }
+    method peso(){}
 }
