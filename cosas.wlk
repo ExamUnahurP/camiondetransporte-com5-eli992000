@@ -25,6 +25,7 @@ object bumblebee{
         return estaTransformadoEnAuto
 }
    method nivelDePeligrosidad(){
+    return 
     if (estaTransformadoEnAuto(self)) 15 else 30
    }
 }
@@ -52,6 +53,7 @@ object bateriaAntiaerea{
         estaConLosMisiles = true
     }
     method peso(){
+        return
         if (estaConLosMisiles) 300 else 200
     }
     method nivelDePeligrosidad(){
@@ -61,5 +63,10 @@ object bateriaAntiaerea{
 }
 object contenedorPortuario{
     var cosas = []
-    method ag
+    method agregarCosas(unaCosa){
+        cosas.add(unaCosa)
+    }
+    method peso(){
+        cosas.peso().sum() + 100
+    }
 }
