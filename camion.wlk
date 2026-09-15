@@ -6,7 +6,7 @@ object camion {
         carga.add(cosa)
     }
     method tieneUnaCargaEntre(valor1,valor2){
+    return
     carga.any({a=>a.peso().between(valor1,valor2)})
     }
-    
 }
