@@ -46,4 +46,20 @@ object arenaAGranel{
         return 1
     }
 }
-object 
+object bateriaAntiaerea{
+    var estaConLosMisiles = false
+    method ponerMisiles(){
+        estaConLosMisiles = true
+    }
+    method peso(){
+        if (estaConLosMisiles) 300 else 200
+    }
+    method nivelDePeligrosidad(){
+        if (estaConLosMisiles) 100 else 0
+    }
+
+}
+object contenedorPortuario{
+    var cosas = []
+    method ag
+}
